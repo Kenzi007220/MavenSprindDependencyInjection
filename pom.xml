@@ -18,7 +18,49 @@
             <artifactId>spring-boot-autoconfigure</artifactId>
             <version>1.4.1.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${sl4j-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${sl4j-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${sl4j-version}</version>
+        </dependency>
     </dependencies>
 
+    <properties>
+        <java-version>1.7</java-version>
+        <sl4j-version>1.5.8</sl4j-version>
+    </properties>
 
-</project>git 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <source>${java-version}</source>
+                        <target>${java-version}</target>
+                        <encoding>${file.encoding}</encoding>
+                        <compilerArgument>-Xlint:all</compilerArgument>
+                        <showWarnings>true</showWarnings>
+                        <showDeprecation>true</showDeprecation>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>

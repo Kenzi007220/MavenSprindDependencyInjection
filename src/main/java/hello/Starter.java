@@ -17,6 +17,5 @@ public class Starter {
         GreetingService greetingService = context.getBean(GreetingService.class);
         logger.info(greetingService.sayGreeting());  // "Greeting, user!"
         System.out.println(greetingService.sayGreeting());
-
     }
 }
